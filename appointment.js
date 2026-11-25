@@ -23,11 +23,12 @@ if (typeof appointment.showModal === 'function') {
     const route = document.getElementById(`route-${clinic.value}`);
     for (const option of branchOptions) option.checked = option.value === clinic.value;
     for (const link of phoneLinks) {
+      link.hidden = !phone;
       const city = link.querySelector('.phone-city');
       city.hidden = !phone;
       city.textContent = phone ? clinic.selectedOptions[0].textContent : '';
       link.href = phone?.href || '#contacts';
-      link.querySelector('[data-phone-label]').textContent = phone?.textContent || 'Телефоны клиник';
+      link.querySelector('[data-phone-label]').textContent = phone?.textContent || '';
     }
     routeLink.href = route?.href || '#contacts';
     routeLink.setAttribute('aria-label', route?.getAttribute('aria-label') || 'Как нас найти');
