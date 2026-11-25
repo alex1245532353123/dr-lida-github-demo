@@ -142,7 +142,7 @@
   .clinic-screen .clinic-social-link { display: inline; color: var(--ink); font-size: .875rem; text-decoration: underline; }
   .clinic-screen .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .clinic-screen .contact-grid .contact-social { display: none; }
-  .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-row: auto; grid-template-rows: auto auto 1fr auto auto auto; }
+  .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-row: auto; grid-template-rows: auto auto 1fr auto auto; }
   .clinic-screen .contact-grid .contact-route-scene { min-height: 0; padding: 0; margin: 0; }
   .clinic-screen .contact-grid .contact-address .contact-route { margin: 0; }
   .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; margin-bottom: -8px; }
@@ -340,7 +340,7 @@
   .clinic-screen .contact-card:not(.contact-social) > :is(h3, p) { margin: 0; }
   .clinic-screen .contact-card:not(.contact-social) > h3 { grid-column: 1 / -1; }
   .clinic-screen .contact-card:not(.contact-social) > .contact-route-scene { grid-area: 2 / 2 / 4; }
-  .clinic-screen .contact-card:not(.contact-social) > :is(.contact-hours, .contact-card-link) { grid-column: 1; }
+  .clinic-screen .contact-card:not(.contact-social) > .contact-hours { grid-column: 1; }
   .clinic-screen .contact-card > .contact-photo { grid-column: 1 / -1; }
   .clinic-screen .clinic-contact-book { min-height: 36px; margin-top: 3px; }
   .clinic-screen .contact-social .contact-character { width: 100px; }

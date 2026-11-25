@@ -7,8 +7,8 @@
   <meta name="page-type" content="service">
   <meta name="description" content="Ветеринарные клиники Dr.Lida в Бузулуке и Сорочинске. Осмотры, анализы и лечение животных.">
   <link rel="stylesheet" href="styles.css?v=2">
-  <link rel="stylesheet" href="details.css?v=ferret-v2">
-  <link rel="stylesheet" href="clinic-screen.css?v=ginger-v2">
+  <link rel="stylesheet" href="details.css?v=clinic-contact-links">
+  <link rel="stylesheet" href="clinic-screen.css?v=clinic-contact-links">
   <link rel="stylesheet" href="catalog.css">
   <meta name="robots" content="noindex">
   <script type="module" src="appointment.js?v=2"></script>
@@ -84,13 +84,15 @@
       <div class="contact-grid">
         <div class="contact-card contact-address">
           <h3>Бузулук</h3>
-          <p>3-й микрорайон, 1Г</p>
+          <p class="contact-location">
+            3-й микрорайон, 1Г
+            <a class="contact-phone" id="phone-buzuluk" href="tel:+79228089800">+7 922 808-98-00</a>
+          </p>
           <dl class="contact-hours" aria-label="График работы в Бузулуке">
             <div><dt>Пн–пт</dt><dd>09:00–14:00, 15:00–17:00</dd></div>
             <div><dt>Сб</dt><dd>09:00–13:00, 13:30–16:30</dd></div>
             <div><dt>Вс</dt><dd>Выходной</dd></div>
           </dl>
-          <a class="button contact-card-link" id="phone-buzuluk" href="tel:+79228089800">+7 922 808-98-00</a>
           <div class="contact-route-scene">
             <span class="contact-cat" aria-hidden="true">
               <span class="contact-cat-back"></span>
@@ -104,13 +106,15 @@
         </div>
         <div class="contact-card contact-branch">
           <h3>Сорочинск</h3>
-          <p>Молодёжная улица, 43</p>
+          <p class="contact-location">
+            Молодёжная улица, 43
+            <a class="contact-phone" id="phone-sorochinsk" href="tel:+79228061223">+7 922 806-12-23</a>
+          </p>
           <dl class="contact-hours" aria-label="График работы в Сорочинске">
             <div><dt>Пн–пт</dt><dd>10:00–13:00, 14:00–17:00</dd></div>
             <div><dt>Сб</dt><dd>Выходной</dd></div>
             <div><dt>Вс</dt><dd>Выходной</dd></div>
           </dl>
-          <a class="button contact-card-link" id="phone-sorochinsk" href="tel:+79228061223">+7 922 806-12-23</a>
           <div class="contact-route-scene" id="sorochinsk">
             <div class="contact-route-anchor">
               <a class="button contact-card-link contact-route" id="route-sorochinsk" href="https://yandex.com/maps/org/doktor_lida/114830030197/" aria-label="Как нас найти в Сорочинске">Как нас найти <span class="arrow" aria-hidden="true">↗</span></a>

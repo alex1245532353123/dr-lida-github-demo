@@ -378,6 +378,24 @@
 }
 .contact-social { background: transparent; }
 .contact-address, .contact-branch { gap: 12px; padding-block: 22px; align-items: start; text-align: center; }
+.contact-location {
+  display: grid;
+  justify-items: center;
+}
+.contact-phone {
+  display: inline-grid;
+  place-items: center;
+  min-height: 32px;
+  padding-inline: 6px;
+  border-radius: 4px;
+  color: var(--ink);
+  font-size: .9375rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+.contact-phone:focus-visible { outline-offset: 2px; }
 .contact-hours {
   width: min(100%, 23rem);
   margin: 0;
@@ -619,7 +637,6 @@
   font-size: inherit;
 }
 .detailed .contact-card-link:hover { background: var(--contact-link-hover); }
-.contact-card-link[href^="tel:"] { font-variant-numeric: tabular-nums; }
 .detailed .button.contact-basket-link {
   position: absolute;
   bottom: 19%;
@@ -747,7 +764,7 @@
 .contact-social .contact-sign { order: 1; width: min(100%, 13em); margin-top: -5px; }
 @media (min-width: 761px) {
   .contact-address, .contact-branch {
-    grid-row: span 6;
+    grid-row: span 5;
     grid-template-rows: subgrid;
   }
 }
@@ -756,7 +773,7 @@
 }
 @media (min-width: 1240px) {
   .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, .8fr); }
-  .contact-social { grid-row: span 6; }
+  .contact-social { grid-row: span 5; }
 }
 @media (min-width: 761px) and (max-width: 1000px) {
   .detailed .navigation { gap: 15px; }
