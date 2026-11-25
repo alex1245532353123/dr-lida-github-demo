@@ -26,7 +26,14 @@
 }
 
 .clinic-screen-brand, .clinic-social-link { display: none; }
-.clinic-screen .clinic-screen-brand { display: inline-flex; align-items: center; min-height: 32px; font-weight: 800; }
+.clinic-screen .clinic-screen-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 800;
+  line-height: 1;
+}
 .clinic-screen .header .navigation { display: none; }
 .clinic-screen .header .phone { flex-direction: row; align-items: center; gap: 8px; }
 .clinic-screen .header .mobile-phone { margin-inline: 0; }
