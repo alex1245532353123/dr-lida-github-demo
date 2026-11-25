@@ -538,9 +538,13 @@
 .contact-cat {
   --cat-face: url('address-white-cat-lift.webp') center / 100% 1600% no-repeat;
   --cat-fur-overlap: 4%;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  inset: 0 auto auto 50%;
+  width: calc(100% + 16px);
   aspect-ratio: 2.48;
+  /* The body rests on the button while the tail and paw hang over the edge. */
+  translate: -50% -80%;
+  z-index: 1;
   pointer-events: none;
 }
 .contact-cat::before,
@@ -672,8 +676,11 @@
   padding-inline: 18px;
   padding-top: 12px;
 }
-.contact-address .contact-route-scene { grid-template-columns: minmax(0, 1fr); }
-.contact-address .contact-route { margin-top: -12%; }
+.contact-address .contact-route-scene {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 52px auto;
+}
+.contact-address .contact-route { grid-row: 2; position: relative; }
 .contact-grid {
   --route-stage-height: calc(clamp(132px, 9.65vw, 184px) / 1.5);
   --route-stage-margin: 16px;

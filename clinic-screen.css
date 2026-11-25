@@ -144,8 +144,6 @@
   .clinic-screen .contact-grid .contact-social { display: none; }
   .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-row: auto; grid-template-rows: auto auto 1fr auto auto; }
   .clinic-screen .contact-grid .contact-route-scene { min-height: 0; padding: 0; margin: 0; }
-  .clinic-screen .contact-grid .contact-address .contact-route { margin: 0; }
-  .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; margin-bottom: -8px; }
   .clinic-screen .contact-grid .contact-rubbing-cat {
     position: relative;
     inset: auto;
@@ -275,7 +273,6 @@
     filter: drop-shadow(0 5px 6px rgb(25 59 54 / 24%));
   }
   .clinic-screen .contact-grid .contact-address .contact-cat {
-    margin-bottom: 0;
     filter: drop-shadow(0 3px 2px rgb(25 59 54 / 28%));
   }
   .clinic-screen .contact-address .contact-cat-back {
@@ -349,11 +346,6 @@
   }
   .clinic-screen .contact-address .contact-route-scene {
     grid-template-rows: var(--clinic-route-rows);
-  }
-  .clinic-screen .contact-grid .contact-address .contact-cat {
-    grid-row: 1;
-    align-self: end;
-    margin-bottom: 0;
   }
   .clinic-screen .contact-route-anchor {
     position: relative;
