@@ -46,6 +46,7 @@
   let paused = false;
   let loading = false;
   let playback;
+  let pawPress;
 
   function canPlay() {
     return visible && !document.hidden && !paused && !reducedMotion.matches;
@@ -53,8 +54,10 @@
 
   function stop() {
     if (!playback) return;
-    playback?.cancel();
+    playback.cancel();
+    pawPress?.cancel();
     playback = null;
+    pawPress = null;
     ferret.classList.remove('is-playing', 'is-resting');
   }
 
@@ -69,9 +72,12 @@
       if (canPlay()) onFinish();
       else stop();
     };
+    return animation;
   }
 
   function rest() {
+    pawPress?.cancel();
+    pawPress = null;
     animate(breathing, restDuration, 'is-resting', play);
   }
 
@@ -83,7 +89,18 @@
       await atlas.decode();
       if (!canPlay()) return;
 
-      animate(gesture, duration, 'is-playing', rest);
+      const movement = animate(gesture, duration, 'is-playing', rest);
+      const pressed = { translate: '0 2px', boxShadow: '0 2px var(--ink), inset 0 1px rgb(255 255 255 / 65%)' };
+      pawPress = route.animate([
+        { easing: 'ease-in' },
+        { ...pressed, offset: .37 },
+        { ...pressed, offset: .55, easing: 'ease-out' },
+        {},
+      ], { id: 'sorochinsk-paw-press', delay: 2190, duration: 270 });
+      // Start both effects on the same frame; the delay matches the paw's reach.
+      const startTime = movement.timeline.currentTime;
+      movement.startTime = startTime;
+      pawPress.startTime = startTime;
     } catch {
       stop();
     } finally {
