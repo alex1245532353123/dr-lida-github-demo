@@ -670,44 +670,62 @@
   padding-top: var(--corner-cat-clearance);
 }
 .contact-route-anchor {
-  position: relative;
   display: grid;
-  justify-self: center;
-  margin-bottom: var(--route-stage-margin);
+  grid-template-columns: min(clamp(100px, 10vw, 136px), max(72px, calc(100% - 142px))) minmax(0, 1fr);
+  grid-template-rows: 1fr auto .5fr;
+  width: 100%;
+}
+.detailed .contact-route-anchor .contact-route {
+  grid-area: 2 / 2;
+  justify-self: stretch;
+  max-width: 16rem;
+  margin: 0 0 0 -3px;
+  padding-inline: 9px;
 }
 .contact-route-cat {
-  --paw-cat-width: clamp(62px, 4.7vw, 96px);
-  position: absolute;
+  position: relative;
+  grid-area: 1 / 1 / 4 / 2;
+  min-width: 0;
+  align-self: center;
   z-index: 1;
-  top: calc(6px - var(--paw-cat-width) * .78);
-  inset-inline-start: calc(5px - var(--paw-cat-width));
-  width: var(--paw-cat-width);
   pointer-events: none;
 }
 .contact-route-cat > img { display: block; width: 100%; height: auto; }
 .contact-route-cat-frames {
   display: none;
   position: absolute;
-  /* Padding leaves room for the lifted paw and the ear flick. */
-  inset: -2% -9.3333% -2% -2.6667%;
+  inset: 0;
   overflow: hidden;
 }
 .contact-route-cat-frames img {
-  display: block;
+  display: none;
   width: 600%;
   height: 2000%;
   max-width: none;
 }
-@media (max-width: 760px) {
-  .contact-branch .contact-route-scene { --corner-cat-clearance: 36px; }
+.contact-route-cat-frames .contact-route-cat-idle { height: 600%; }
+.contact-cat-motion {
+  justify-self: center;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: .875rem;
+  text-decoration: underline;
+  text-underline-offset: .18em;
+  cursor: pointer;
 }
-@media (max-width: 350px) {
-  .contact-route-cat { inset-inline-start: calc(11px - var(--paw-cat-width)); }
-}
+.contact-cat-motion:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) {
-  .contact-route-cat.is-playing > img { visibility: hidden; }
-  .contact-route-cat.is-playing .contact-route-cat-frames { display: block; }
-  .contact-route-cat.is-playing .contact-route-cat-frames img { will-change: transform; }
+  .contact-route-cat:is(.is-playing, .is-resting) > img { visibility: hidden; }
+  .contact-route-cat:is(.is-playing, .is-resting) .contact-route-cat-frames { display: block; }
+  .contact-route-cat.is-playing .contact-route-cat-gesture,
+  .contact-route-cat.is-resting .contact-route-cat-idle {
+    display: block;
+    will-change: transform;
+  }
 }
 @media (min-width: 761px) {
   .contact-address .contact-route-scene {
@@ -987,4 +1005,3 @@
   72% { opacity: .72; }
   100% { opacity: 0; transform: translateX(var(--glint-end)); }
 }
-

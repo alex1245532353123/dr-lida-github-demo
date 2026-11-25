@@ -144,11 +144,9 @@
   .clinic-screen .contact-grid .contact-social { display: none; }
   .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-row: auto; grid-template-rows: auto auto 1fr auto auto auto; }
   .clinic-screen .contact-grid .contact-route-scene { min-height: 0; padding: 0; margin: 0; }
-  .clinic-screen .contact-grid .contact-route-anchor { margin: 0; }
-  .clinic-screen .contact-grid .contact-route { margin: 0; }
+  .clinic-screen .contact-grid .contact-address .contact-route { margin: 0; }
   .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; margin-bottom: -8px; }
-  .clinic-screen .contact-grid .contact-route-anchor { width: 100%; }
-  .clinic-screen .contact-grid :is(.contact-rubbing-cat, .contact-route-cat) {
+  .clinic-screen .contact-grid .contact-rubbing-cat {
     position: relative;
     inset: auto;
     grid-row: 1;
@@ -157,7 +155,6 @@
     margin-bottom: -4px;
   }
   .clinic-screen .contact-grid .contact-rubbing-cat { width: min(92px, 90%); }
-  .clinic-screen .contact-grid .contact-route-cat { width: 38px; }
 }
 
 @media (min-width: 761px) {
@@ -303,6 +300,11 @@
     opacity: 1;
     animation: none;
   }
+  .clinic-screen #contacts .contact-route-anchor .contact-route {
+    width: auto;
+    gap: .4em;
+    font-size: clamp(.9375rem, 4.5vw, 1.125rem);
+  }
 }
 
 @media (min-width: 761px) and (max-width: 1000px) and (max-height: 560px) and (pointer: coarse) {
@@ -343,4 +345,3 @@
   .clinic-screen .clinic-contact-book { min-height: 36px; margin-top: 3px; }
   .clinic-screen .contact-social .contact-character { width: 100px; }
 }
-

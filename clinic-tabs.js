@@ -59,7 +59,12 @@ for (const link of document.querySelectorAll('a[href^="#"]')) {
 }
 
 function selectFromAddress() {
-  selectTab(panelsById.get(window.location.hash.slice(1)) ?? homeTab);
+  const target = window.location.hash.slice(1);
+  const sorochinsk = target === 'sorochinsk' && document.getElementById(target);
+  selectTab(panelsById.get(sorochinsk ? 'contacts' : target) ?? homeTab);
+  if (sorochinsk) {
+    requestAnimationFrame(() => sorochinsk.scrollIntoView({ block: 'center', behavior: 'instant' }));
+  }
 }
 
 selectFromAddress();
@@ -104,4 +109,3 @@ for (const grid of document.querySelectorAll('.review-grid')) {
   compactScreen.addEventListener('change', render);
   render();
 }
-
