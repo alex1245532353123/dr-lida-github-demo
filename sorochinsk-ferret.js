@@ -5,6 +5,7 @@
   const motionButton = document.querySelector('.contact-ferret-motion');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const canHover = matchMedia('(hover: hover)');
+  const compactRoute = matchMedia('(max-width: 760px), (pointer: coarse)');
   const atlas = new Image();
   atlas.alt = '';
   stage.append(atlas);
@@ -90,13 +91,16 @@
       if (!canPlay()) return;
 
       const movement = animate(gesture, duration, 'is-playing', rest);
-      const pressed = { translate: '0 2px', boxShadow: '0 2px var(--ink), inset 0 1px rgb(255 255 255 / 65%)' };
+      const pressed = {
+        translate: compactRoute.matches ? '0 4px' : '0 3px',
+        boxShadow: '0 1px var(--ink), inset 0 1px rgb(255 255 255 / 65%)',
+      };
       pawPress = route.animate([
         { easing: 'ease-in' },
-        { ...pressed, offset: .37 },
-        { ...pressed, offset: .55, easing: 'ease-out' },
+        { ...pressed, offset: .23 },
+        { ...pressed, offset: .36, easing: 'cubic-bezier(.25, .65, .35, 1)' },
         {},
-      ], { id: 'sorochinsk-paw-press', delay: 2190, duration: 270 });
+      ], { id: 'sorochinsk-paw-press', delay: 2190, duration: 440 });
       // Start both effects on the same frame; the delay matches the paw's reach.
       const startTime = movement.timeline.currentTime;
       movement.startTime = startTime;
