@@ -671,8 +671,8 @@
 }
 .contact-route-anchor {
   display: grid;
-  grid-template-columns: min(clamp(100px, 10vw, 136px), max(72px, calc(100% - 142px))) minmax(0, 1fr);
-  grid-template-rows: 1fr auto .5fr;
+  grid-template-columns: min(clamp(100px, 10.3vw, 144px), max(72px, calc(100% - 142px))) minmax(0, 1fr);
+  grid-template-rows: 1fr auto 1fr;
   width: 100%;
 }
 .detailed .contact-route-anchor .contact-route {
@@ -682,7 +682,7 @@
   margin: 0 0 0 -3px;
   padding-inline: 9px;
 }
-.contact-route-cat {
+.contact-route-ferret {
   position: relative;
   grid-area: 1 / 1 / 4 / 2;
   min-width: 0;
@@ -690,21 +690,20 @@
   z-index: 1;
   pointer-events: none;
 }
-.contact-route-cat > img { display: block; width: 100%; height: auto; }
-.contact-route-cat-frames {
+.contact-route-ferret > img { display: block; width: 100%; height: auto; }
+.contact-route-ferret-frames {
   display: none;
   position: absolute;
   inset: 0;
   overflow: hidden;
 }
-.contact-route-cat-frames img {
+.contact-route-ferret-frames img {
   display: none;
-  width: 600%;
-  height: 2000%;
+  width: 800%;
+  height: 2400%;
   max-width: none;
 }
-.contact-route-cat-frames .contact-route-cat-idle { height: 600%; }
-.contact-cat-motion {
+.contact-ferret-motion {
   justify-self: center;
   min-height: 44px;
   padding: 4px 8px;
@@ -717,12 +716,11 @@
   text-underline-offset: .18em;
   cursor: pointer;
 }
-.contact-cat-motion:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.contact-ferret-motion:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) {
-  .contact-route-cat:is(.is-playing, .is-resting) > img { visibility: hidden; }
-  .contact-route-cat:is(.is-playing, .is-resting) .contact-route-cat-frames { display: block; }
-  .contact-route-cat.is-playing .contact-route-cat-gesture,
-  .contact-route-cat.is-resting .contact-route-cat-idle {
+  .contact-route-ferret:is(.is-playing, .is-resting) > img { visibility: hidden; }
+  .contact-route-ferret:is(.is-playing, .is-resting) .contact-route-ferret-frames { display: block; }
+  .contact-route-ferret:is(.is-playing, .is-resting) .contact-route-ferret-frames img {
     display: block;
     will-change: transform;
   }
