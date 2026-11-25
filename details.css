@@ -556,6 +556,9 @@
 }
 .contact-cat::before {
   content: '';
+  /* The extra sprite height extends the tail without moving the body. */
+  height: calc(130% * 438 / 409);
+  background-image: url('address-white-cat-plume.webp');
   mask-image: linear-gradient(to right, #000 96%, transparent);
 }
 .contact-cat-back {
