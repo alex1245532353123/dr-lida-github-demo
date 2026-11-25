@@ -139,7 +139,7 @@
   .clinic-screen .contact-grid .contact-route-scene { min-height: 0; padding: 0; margin: 0; }
   .clinic-screen .contact-grid .contact-route-anchor { margin: 0; }
   .clinic-screen .contact-grid .contact-route { margin: 0; }
-  .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; }
+  .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; margin-bottom: -8px; }
   .clinic-screen .contact-grid .contact-route-anchor { width: 100%; }
   .clinic-screen .contact-grid :is(.contact-rubbing-cat, .contact-route-cat) {
     position: relative;
