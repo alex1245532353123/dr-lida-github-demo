@@ -269,12 +269,13 @@
     justify-content: center;
     padding-inline: 8px;
     font-size: clamp(1.3125rem, 6.1vw, 1.5rem);
+    filter: drop-shadow(0 5px 6px rgb(25 59 54 / 24%));
   }
   .clinic-screen #contacts .contact-address .contact-route-scene {
     width: min(calc(100% - .5rem), 18rem);
   }
   .clinic-screen #contacts .contact-address .contact-route {
-    width: min(calc(100% / 1.12), 16rem);
+    width: min(96%, 17rem);
     margin-top: -12%;
     padding-top: 20px;
   }
@@ -282,6 +283,18 @@
   .clinic-screen .contact-grid .contact-address .contact-cat {
     width: 100%;
     margin-bottom: 0;
+    filter: drop-shadow(0 3px 2px rgb(25 59 54 / 28%));
+  }
+  .clinic-screen .contact-address .contact-cat-back {
+    inset: 18% auto auto 45%;
+    z-index: 1;
+    width: 23.2%;
+    height: 55.9%;
+    background: url('address-white-cat-scruff.png') center / 100% 100% no-repeat;
+    mask-image: linear-gradient(to right, transparent, #000 22% 80%, transparent),
+      linear-gradient(to bottom, transparent, #000 20% 72%, transparent);
+    opacity: 1;
+    animation: none;
   }
 }
 
