@@ -1,0 +1,92 @@
+.clinic-tabs:not([hidden]),
+.clinic-screen .clinic-tabs:not([hidden]) {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.clinic-screen .clinic-tabs button {
+  padding-inline: 2px;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.clinic-screen .catalog-section:not([hidden]) {
+  display: block;
+}
+
+.catalog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-bottom: 16px;
+}
+
+.catalog-heading h2 {
+  margin: 0 0 4px;
+  font: 750 clamp(1.5rem, 3vw, 2rem)/1.15 var(--display);
+  letter-spacing: -.03em;
+}
+
+.catalog-heading p,
+.catalog-card p {
+  color: var(--muted);
+  font-size: .9375rem;
+  line-height: 1.4;
+}
+
+.catalog-heading .button { min-height: 44px; }
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+  padding: 0 3px 3px 0;
+}
+
+.catalog-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1.5px solid var(--ink);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: 3px 3px 0 #accbb9;
+}
+
+.catalog-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-bottom: 1px solid var(--edge);
+}
+
+.catalog-card-copy { padding: 10px 12px 12px; }
+
+.catalog-card h3 {
+  margin: 0 0 4px;
+  font: 750 clamp(1rem, 1.5vw, 1.25rem)/1.2 var(--display);
+}
+
+@media (max-width: 720px) {
+  .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 400px) {
+  .clinic-screen .clinic-tabs button { font-size: .75rem; }
+}
+
+@media (max-width: 360px) {
+  .clinic-screen .clinic-tabs:not([hidden]) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .clinic-screen .clinic-tabs button {
+    grid-column: span 2;
+    font-size: .875rem;
+  }
+  .clinic-screen .clinic-tabs button:nth-last-child(-n+2) {
+    grid-column: span 3;
+  }
+  .catalog-grid { grid-template-columns: minmax(0, 1fr); }
+}

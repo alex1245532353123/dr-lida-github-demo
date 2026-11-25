@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="details.css">
   <link rel="stylesheet" href="clinic-screen.css">
+  <link rel="stylesheet" href="catalog.css">
   <meta name="robots" content="noindex">
   <script type="module" src="appointment.js"></script>
   <script src="clinic-tabs.js" defer></script>
@@ -20,6 +21,7 @@
   <header class="wrap header">
     <nav class="navigation" aria-label="Основное меню">
       <a href="#services">Услуги и цены</a>
+      <a href="#catalog">Ветаптека</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Контакты</a>
     </nav>
@@ -65,6 +67,9 @@
       </button>
       <button type="button" role="tab" id="tab-services" aria-controls="services" aria-selected="false" tabindex="-1">
         <span>Услуги и цены</span>
+      </button>
+      <button type="button" role="tab" id="tab-catalog" aria-controls="catalog" aria-selected="false" tabindex="-1">
+        <span>Ветаптека</span>
       </button>
       <button type="button" role="tab" id="tab-reviews" aria-controls="reviews" aria-selected="false" tabindex="-1">
         <span>Отзывы</span>
@@ -203,6 +208,60 @@
           </div>
         </dl>
       </section>
+    </section>
+
+    <section class="details-section catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-heading">
+        <div>
+          <h2 id="catalog-title">Ветаптека</h2>
+          <p>Примеры карточек товаров. Наличие и цены уточняйте в клинике.</p>
+        </div>
+        <a class="button" href="#contacts">Уточнить наличие</a>
+      </div>
+      <div class="catalog-grid">
+        <article class="catalog-card">
+          <img src="catalog-demo-food.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Сухой корм</h3>
+            <p>Повседневный рацион для питомцев.</p>
+          </div>
+        </article>
+        <article class="catalog-card">
+          <img src="catalog-demo-bowl.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Миска</h3>
+            <p>Для воды или корма.</p>
+          </div>
+        </article>
+        <article class="catalog-card">
+          <img src="catalog-demo-brush.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Щётка для шерсти</h3>
+            <p>Для расчёсывания питомца.</p>
+          </div>
+        </article>
+        <article class="catalog-card">
+          <img src="catalog-demo-collar.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Ошейник</h3>
+            <p>С застёжкой и регулировкой длины.</p>
+          </div>
+        </article>
+        <article class="catalog-card">
+          <img src="catalog-demo-tablets.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Таблетки</h3>
+            <p>Ветеринарные препараты в блистере.</p>
+          </div>
+        </article>
+        <article class="catalog-card">
+          <img src="catalog-demo-vial.jpg" width="900" height="600" alt="" loading="lazy">
+          <div class="catalog-card-copy">
+            <h3>Препараты для инъекций</h3>
+            <p>Ветеринарные растворы во флаконах.</p>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section class="details-section reviews-section" id="reviews" aria-labelledby="reviews-title">
@@ -417,4 +476,3 @@
   </script>
 </body>
 </html>
-
