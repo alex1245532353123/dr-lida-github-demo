@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ru" data-type="service">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="site-kind" content="other">
+  <meta name="page-type" content="service">
+  <meta name="description" content="Ветеринарные клиники Dr.Lida в Бузулуке и Сорочинске. Осмотры, анализы и лечение животных.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="details.css">
+  <link rel="stylesheet" href="clinic-screen.css">
+  <meta name="robots" content="noindex">
+  <script type="module" src="appointment.js"></script>
+  <script src="clinic-tabs.js" defer></script>
+  <script src="sorochinsk-cat.js" defer></script>
+  <title>Dr.Lida — ветеринарные клиники в Бузулуке и Сорочинске</title>
+</head>
+<body class="drawn detailed">
+  <a class="skip-link" href="#main">К содержанию</a>
+  <header class="wrap header">
+    <nav class="navigation" aria-label="Основное меню">
+      <a href="#services">Услуги и цены</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="clinic-screen-brand" href="#home">Dr.<span class="brand-accent">Lida</span></a>
+    <a class="phone" href="#contacts" data-branch-phone><span class="phone-city" hidden></span><span data-phone-label>Телефоны клиник</span></a>
+    <a class="mobile-phone" href="#contacts" data-branch-phone><span class="phone-city" hidden></span><span data-phone-label>Телефоны клиник</span><span class="arrow" aria-hidden="true">↗</span></a>
+  </header>
+  <main class="wrap" id="main">
+    <div class="hero">
+      <div class="copy">
+        <p class="brand-title">Dr.<span class="brand-accent">Lida</span></p>
+        <h1 class="hero-tagline">Ветеринарная клиника</h1>
+        <p class="desc">Осмотры, анализы и лечение в Бузулуке и Сорочинске.</p>
+        <fieldset class="hero-branch" hidden>
+          <legend>Выберите филиал</legend>
+          <div class="hero-branch-options">
+            <label><input type="radio" name="hero-clinic" value="buzuluk">Бузулук</label>
+            <label><input type="radio" name="hero-clinic" value="sorochinsk">Сорочинск</label>
+          </div>
+        </fieldset>
+        <div class="actions">
+          <a class="button primary" href="#contacts" data-appointment aria-describedby="appointment-note-home">Записаться на приём</a>
+          <a class="button" href="#contacts" data-branch-route><span class="hero-button-icon hero-button-pin" aria-hidden="true"></span>Как нас найти</a>
+          <p class="appointment-note" id="appointment-note-home">Демоверсия сайта · пробная запись</p>
+        </div>
+        <a class="hero-reviews" href="https://yandex.ru/maps/org/doktor_lida/159943414539/reviews/" aria-label="Рейтинг клиники в Бузулуке 5,0 из 5. Отзывы на Яндекс Картах">
+          <strong class="reviews-score"><span aria-hidden="true">★</span> 5,0</strong>
+          <span class="hero-reviews-label">Бузулук · Отзывы на Яндекс Картах</span>
+        </a>
+      </div>
+      <div class="hero-artwork">
+        <picture>
+          <source media="(max-width: 760px), (max-width: 1000px) and (orientation: portrait)" srcset="clinic-vet-cat-table-mobile.jpg">
+          <source media="(min-width: 1700px)" srcset="clinic-vet-cat-clear-header-wide.jpg">
+          <img src="clinic-vet-cat-clear-header-desktop.jpg" fetchpriority="high" alt="Ветеринар держит трёхцветную кошку, стоя за смотровым столом" data-source="illustration based on supplied clinic photography" data-subject="veterinarian and calico cat">
+        </picture>
+        <div class="table-glint" aria-hidden="true"></div>
+      </div>
+    </div>
+    <div class="clinic-tabs" role="tablist" aria-label="Информация о клиниках" hidden>
+      <button type="button" role="tab" id="tab-contacts" aria-controls="contacts" aria-selected="true">
+        <span>Клиники</span>
+      </button>
+      <button type="button" role="tab" id="tab-services" aria-controls="services" aria-selected="false" tabindex="-1">
+        <span>Услуги и цены</span>
+      </button>
+      <button type="button" role="tab" id="tab-reviews" aria-controls="reviews" aria-selected="false" tabindex="-1">
+        <span>Отзывы</span>
+      </button>
+    </div>
+
+    <section class="details-section" id="contacts" aria-labelledby="contacts-title">
+      <div class="clinic-contact-heading">
+        <h2 class="panel-heading" id="contacts-title">Наши клиники</h2>
+        <a class="clinic-social-link" href="https://vk.ru/id710556637">ВКонтакте</a>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card contact-address">
+          <h3>Бузулук</h3>
+          <p>3-й микрорайон, 1Г</p>
+          <dl class="contact-hours" aria-label="График работы в Бузулуке">
+            <div><dt>Пн–пт</dt><dd>09:00–14:00, 15:00–17:00</dd></div>
+            <div><dt>Сб</dt><dd>09:00–13:00, 13:30–16:30</dd></div>
+            <div><dt>Вс</dt><dd>Выходной</dd></div>
+          </dl>
+          <a class="button contact-card-link" id="phone-buzuluk" href="tel:+79228089800">+7 922 808-98-00</a>
+          <div class="contact-route-scene">
+            <span class="contact-cat" aria-hidden="true">
+              <span class="contact-cat-back"></span>
+              <span class="contact-cat-eyes"></span>
+            </span>
+            <a class="button contact-card-link contact-route" id="route-buzuluk" href="https://yandex.ru/maps/org/159943414539/" aria-label="Как нас найти в Бузулуке">Как нас найти <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <a class="contact-photo" href="https://veterinarnaja-klinika-dr-lida.clients.site/#photos" title="Фото из галереи клиники в Бузулуке">
+            <img src="buzuluk-entrance.webp" alt="Вход в клинику в Бузулуке с зелёными ступенями" width="300" height="400" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <div class="contact-card contact-branch">
+          <h3>Сорочинск</h3>
+          <p>Молодёжная улица, 43</p>
+          <dl class="contact-hours" aria-label="График работы в Сорочинске">
+            <div><dt>Пн–пт</dt><dd>10:00–13:00, 14:00–17:00</dd></div>
+            <div><dt>Сб</dt><dd>Выходной</dd></div>
+            <div><dt>Вс</dt><dd>Выходной</dd></div>
+          </dl>
+          <a class="button contact-card-link" id="phone-sorochinsk" href="tel:+79228061223">+7 922 806-12-23</a>
+          <div class="contact-route-scene">
+            <div class="contact-route-anchor">
+              <a class="button contact-card-link contact-route" id="route-sorochinsk" href="https://yandex.com/maps/org/doktor_lida/114830030197/" aria-label="Как нас найти в Сорочинске">Как нас найти <span class="arrow" aria-hidden="true">↗</span></a>
+              <span class="contact-route-cat" aria-hidden="true">
+                <img src="sorochinsk-cat-cartoon.webp" width="300" height="400" alt="" decoding="async">
+                <span class="contact-route-cat-frames" data-src="sorochinsk-cat-cartoon-tap.webp"></span>
+              </span>
+            </div>
+          </div>
+          <a class="contact-photo" href="https://yandex.com/maps/org/doktor_lida/114830030197/gallery/" title="Фото Natalia M. на Яндекс Картах">
+            <img src="sorochinsk-entrance.webp" alt="Вход в клинику в Сорочинске с вывеской «Доктор Лида»" width="957" height="1280" loading="lazy" decoding="async">
+          </a>
+        </div>
+        <div class="contact-card contact-social">
+          <div class="contact-sign">
+            <h3>Мы в соцсетях</h3>
+          </div>
+          <div class="contact-character">
+            <div class="contact-dog">
+              <span class="contact-dog-tail" aria-hidden="true"></span>
+              <div class="contact-dog-head">
+                <div class="contact-dog-basket">
+                  <a class="button contact-basket-link" href="https://vk.ru/id710556637" aria-label="Клиника во ВКонтакте">ВКонтакте <span class="arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="button primary clinic-contact-book" href="#contacts" data-appointment aria-describedby="appointment-note-contacts">Записаться на приём</a>
+      <p class="appointment-note" id="appointment-note-contacts">Демоверсия сайта · пробная запись</p>
+    </section>
+
+    <section class="details-section" id="services" aria-labelledby="services-title">
+      <div class="section-head">
+        <h2 class="panel-heading" id="services-title">Услуги и цены в Бузулуке</h2>
+      </div>
+      <div class="price-layout">
+        <div class="price-columns">
+          <div class="price-group">
+            <h3>Приём и диагностика</h3>
+            <dl>
+              <div><dt>Клинический осмотр</dt><dd>400 ₽</dd></div>
+              <div><dt>Клинический осмотр + лечение</dt><dd>600 ₽</dd></div>
+              <div><dt>Общий анализ крови</dt><dd>600 ₽</dd></div>
+            </dl>
+          </div>
+          <div class="price-group">
+            <h3>Операции и уход</h3>
+            <dl>
+              <div><dt>Кастрация кота</dt><dd>1 500 ₽</dd></div>
+              <div><dt>Стерилизация кошки</dt><dd>2 500 ₽</dd></div>
+              <div><dt>Стрижка когтей</dt><dd>300 ₽</dd></div>
+            </dl>
+          </div>
+        </div>
+        <img class="comic-art price-art" src="comic-care.jpg" alt="" loading="lazy" decoding="async">
+      </div>
+      <a class="button primary appointment-service-link" href="#contacts" data-appointment aria-describedby="appointment-note-services">Записаться на приём</a>
+      <p class="appointment-note" id="appointment-note-services">Демоверсия сайта · пробная запись</p>
+      <div class="price-branch-contact">
+        <h3 id="sorochinsk-prices">Цены в Сорочинске</h3>
+        <a class="button" href="tel:+79228061223" aria-describedby="sorochinsk-prices">Уточнить цены по телефону</a>
+      </div>
+      <section class="price-group service-details" aria-labelledby="service-details">
+        <h3 id="service-details">Прочее</h3>
+        <dl>
+          <div>
+            <dt>Услуги</dt>
+            <dd>Кастрация и стерилизация, обработка от паразитов, вакцинация, удаление зубного камня, операции, лабораторная диагностика.</dd>
+          </div>
+          <div>
+            <dt>Врачи</dt>
+            <dd>Акушер-гинеколог, терапевт, анестезиолог, хирург, стоматолог, специалист по лечению грызунов.</dd>
+          </div>
+          <div>
+            <dt>Диагностика</dt>
+            <dd>Общий клинический анализ крови, общий клинический анализ мочи, УЗИ.</dd>
+          </div>
+          <div>
+            <dt>Кого принимаем</dt>
+            <dd>Хорьки, птицы, рептилии, собаки, кролики, кошки, лисы и морские свинки.</dd>
+          </div>
+          <div>
+            <dt>Посещение с животными</dt>
+            <dd>Можно приходить со всеми животными.</dd>
+          </div>
+          <div>
+            <dt>Акции</dt>
+            <dd>Действуют акции.</dd>
+          </div>
+          <div>
+            <dt>Оплата</dt>
+            <dd>Наличными.</dd>
+          </div>
+        </dl>
+      </section>
+    </section>
+
+    <section class="details-section reviews-section" id="reviews" aria-labelledby="reviews-title">
+      <div class="section-head">
+        <h2 class="panel-heading" id="reviews-title">Отзывы о клинике в Бузулуке</h2>
+        <p class="reviews-rating">
+          <strong class="reviews-score"><span aria-hidden="true">★</span> 5,0</strong>
+          <span>204 отзыва на Яндекс Картах</span>
+        </p>
+      </div>
+      <div class="review-grid">
+        <figure>
+          <blockquote><p>«Отличный персонал, работают слаженно, чётко».</p></blockquote>
+          <figcaption>
+            <img src="address-tabby-v2.webp" alt="" width="52" height="52" loading="lazy">
+            <span><strong>Андрей К.</strong><span>Яндекс Карты</span></span>
+          </figcaption>
+        </figure>
+        <figure>
+          <blockquote><p>«Замечательная клиника, ходим много лет и только сюда».</p></blockquote>
+          <figcaption>
+            <img src="social-beagle-v2.webp" alt="" width="52" height="52" loading="lazy">
+            <span><strong>Кк</strong><span>Яндекс Карты</span></span>
+          </figcaption>
+        </figure>
+      </div>
+      <a class="button reviews-button" href="https://yandex.ru/maps/org/doktor_lida/159943414539/reviews/">Читать все отзывы <span class="arrow" aria-hidden="true">↗</span></a>
+    </section>
+
+  </main>
+  <dialog class="appointment-dialog" id="appointment" aria-labelledby="appointment-title" aria-describedby="appointment-description">
+    <div class="appointment-heading">
+      <h2 id="appointment-title">Записаться на приём</h2>
+      <form method="dialog">
+        <button class="appointment-close" type="submit" aria-label="Закрыть">×</button>
+      </form>
+    </div>
+    <div class="appointment-content">
+      <p id="appointment-description">Выберите филиал и пробное время. Используйте вымышленные имя и телефон.</p>
+      <form class="appointment-request" method="dialog">
+        <fieldset class="appointment-fields">
+          <label class="appointment-field">
+            Филиал
+            <select name="clinic" autofocus required>
+              <option value="" disabled selected>Выберите филиал</option>
+              <option value="buzuluk">Бузулук</option>
+              <option value="sorochinsk">Сорочинск</option>
+            </select>
+          </label>
+          <div class="appointment-date-time">
+            <label class="appointment-field">
+              Дата
+            <input name="date" type="date" required disabled>
+            </label>
+            <label class="appointment-field">
+              Время
+              <select name="time" required disabled>
+                <option value="">Выберите филиал</option>
+              </select>
+            </label>
+          </div>
+          <p class="appointment-availability" role="status"></p>
+          <label class="appointment-field">
+            Ваше имя
+            <input name="name" autocomplete="off" placeholder="Тест" maxlength="80" required>
+          </label>
+          <label class="appointment-field">
+            Телефон
+            <input name="phone" type="tel" autocomplete="off" maxlength="24" placeholder="+7 900 000-00-00" required>
+          </label>
+          <label class="appointment-field">
+            Повод обращения
+            <select name="reason">
+              <option value="">Можно пропустить</option>
+              <option>Осмотр</option>
+              <option>Анализы и диагностика</option>
+              <option>Операция</option>
+              <option>Уход за питомцем</option>
+              <option>Другое</option>
+            </select>
+          </label>
+          <button class="button primary appointment-submit" type="submit" disabled>Отправить пробную заявку</button>
+        </fieldset>
+      </form>
+      <div class="appointment-result" tabindex="-1" hidden>
+        <h3>Пробная заявка завершена</h3>
+        <p class="appointment-confirmation"></p>
+        <p>Данные остались в браузере. Клиника не получила заявку.</p>
+        <button class="button appointment-new" type="button">Новая заявка</button>
+      </div>
+    </div>
+  </dialog>
+  <script>
+    const scene = document.querySelector('.hero-artwork img');
+    function playTableGlint() {
+      if (scene.naturalWidth > 0) scene.closest('.hero-artwork').classList.add('scene-ready');
+    }
+    if (scene.complete) playTableGlint();
+    else scene.addEventListener('load', playTableGlint, { once: true });
+
+    const dog = document.querySelector('.contact-dog');
+    const basket = dog.querySelector('.contact-dog-basket');
+    const tail = dog.querySelector('.contact-dog-tail');
+    const hoverInput = matchMedia('(hover: hover)');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    const catRoute = document.querySelector('.contact-address .contact-route');
+    const catEyes = document.querySelector('.contact-cat-eyes');
+    let catBlinkTimer;
+    let catLookTimer;
+
+    function catCanBlink() {
+      return !reducedMotion.matches && (catRoute.matches(':focus-visible')
+        || (hoverInput.matches && catRoute.matches(':hover')));
+    }
+
+    function updateCatBlink() {
+      if (!catCanBlink()) {
+        clearTimeout(catBlinkTimer);
+        catBlinkTimer = undefined;
+      } else if (catBlinkTimer === undefined) {
+        catBlinkTimer = setTimeout(() => {
+          catBlinkTimer = undefined;
+          if (!catCanBlink()) return;
+
+          catEyes.classList.add('is-blinking');
+          updateCatBlink();
+        }, 5000 + Math.random() * 3000);
+      }
+    }
+
+    for (const event of ['pointerenter', 'pointerleave', 'focus', 'blur']) {
+      catRoute.addEventListener(event, updateCatBlink);
+    }
+    catRoute.addEventListener('pointerenter', () => {
+      clearTimeout(catLookTimer);
+      catEyes.classList.remove('is-lingering');
+    });
+    catRoute.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'touch' || !hoverInput.matches || reducedMotion.matches) return;
+
+      clearTimeout(catLookTimer);
+      catEyes.classList.add('is-lingering');
+      catLookTimer = setTimeout(() => catEyes.classList.remove('is-lingering'), 500);
+    });
+    for (const event of ['animationend', 'animationcancel']) {
+      catEyes.addEventListener(event, () => catEyes.classList.remove('is-blinking'));
+    }
+    hoverInput.addEventListener('change', updateCatBlink);
+    reducedMotion.addEventListener('change', updateCatBlink);
+    updateCatBlink();
+
+    const dogMotions = new Map();
+    let dogTouchTimer;
+
+    function animateDogPart(part, frames, { duration, iterations = 1 }) {
+      if (reducedMotion.matches) return;
+
+      // Read the current pose before replacing an animation.
+      const transform = getComputedStyle(part).transform;
+      dogMotions.get(part)?.cancel();
+      const keyframes = [
+        { offset: 0, transform },
+        ...frames,
+        { offset: 1, transform: iterations === Infinity ? transform : 'none' },
+      ].map((frame) => ({ ...frame, easing: 'ease-in-out' }));
+      dogMotions.set(part, part.animate(keyframes, { duration, iterations }));
+    }
+
+    function startDogMotion() {
+      animateDogPart(basket, [
+        { offset: 0.24, transform: 'rotate(-1.8deg)' },
+        { offset: 0.51, transform: 'rotate(1.7deg)' },
+        { offset: 0.76, transform: 'rotate(-0.6deg)' },
+      ], { duration: 900 });
+      animateDogPart(tail, [
+        { offset: 0.25, transform: 'rotate(15deg)' },
+        { offset: 0.75, transform: 'rotate(-15deg)' },
+      ], { duration: 560, iterations: Infinity });
+    }
+
+    function settleDogMotion() {
+      for (const [part, motion] of dogMotions) {
+        if (motion.playState !== 'finished') animateDogPart(part, [], { duration: 300 });
+      }
+    }
+
+    reducedMotion.addEventListener('change', (event) => {
+      if (!event.matches) return;
+      for (const motion of dogMotions.values()) motion.cancel();
+    });
+
+    dog.addEventListener('pointerenter', (event) => {
+      if (event.pointerType !== 'touch' && hoverInput.matches) startDogMotion();
+    });
+
+    dog.addEventListener('pointerleave', (event) => {
+      if (event.pointerType !== 'touch' && hoverInput.matches && !dog.classList.contains('is-touched')) settleDogMotion();
+    });
+
+    dog.addEventListener('pointerup', (event) => {
+      if (event.pointerType !== 'touch' || event.target.closest('a')) return;
+
+      if (!dog.classList.contains('is-touched')) startDogMotion();
+      dog.classList.add('is-touched');
+      clearTimeout(dogTouchTimer);
+      dogTouchTimer = setTimeout(() => {
+        dog.classList.remove('is-touched');
+        if (!hoverInput.matches || !dog.matches(':hover')) settleDogMotion();
+      }, 1120);
+    });
+
+  </script>
+</body>
+</html>
+

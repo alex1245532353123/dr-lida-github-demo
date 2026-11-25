@@ -1,0 +1,299 @@
+.clinic-screen {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+.clinic-screen .detailed {
+  --frame-block-gap: clamp(4px, 1.1dvh, 14px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: calc(100dvh - 2 * var(--frame-block-gap));
+  min-height: 0;
+}
+
+.clinic-screen .detailed:has(> [role="note"]) {
+  grid-template-rows: auto auto minmax(0, 1fr);
+}
+
+.clinic-screen .detailed > [role="note"] {
+  font-size: .8125rem;
+}
+
+.clinic-screen .detailed .header {
+  display: flex;
+  justify-content: space-between;
+  min-height: 44px;
+}
+
+.clinic-screen-brand, .clinic-social-link { display: none; }
+.clinic-screen .clinic-screen-brand { display: inline-flex; align-items: center; min-height: 32px; font-weight: 800; }
+.clinic-screen .header .navigation { display: none; }
+.clinic-screen .header .phone { flex-direction: row; align-items: center; gap: 8px; }
+.clinic-screen .header .mobile-phone { margin-inline: 0; }
+
+.clinic-screen .detailed main {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-height: 0;
+  padding-bottom: clamp(8px, 1.8dvh, 18px);
+}
+
+.clinic-screen main [hidden] { display: none !important; }
+.clinic-screen .clinic-tabs:not([hidden]) {
+  margin: 2px 0 clamp(9px, 1.8dvh, 18px);
+  gap: clamp(4px, 1vw, 14px);
+}
+
+.clinic-screen .clinic-tabs button {
+  display: flex;
+  min-height: 44px;
+  padding: 4px 2px;
+  border-radius: clamp(8px, 1vw, 14px);
+  font-size: clamp(.79rem, 1.35vw, 1.125rem);
+}
+
+.clinic-screen .detailed .hero {
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+  border-radius: 14px;
+  overscroll-behavior: contain;
+}
+
+.clinic-screen .hero .copy { padding: clamp(10px, 2dvh, 28px); }
+.clinic-screen .hero .brand-title { font-size: clamp(1.5rem, min(3.6vw, 6dvh), 4rem); }
+.clinic-screen .hero .hero-tagline {
+  font-size: clamp(1.25rem, min(3.25vw, 5.1dvh), 3.25rem);
+  text-wrap: balance;
+}
+.clinic-screen .hero .desc { font-size: clamp(.9375rem, min(2vw, 3dvh), 1.375rem); }
+.clinic-screen .hero .actions { row-gap: 6px; margin-top: clamp(8px, 2dvh, 20px); }
+.clinic-screen .hero .button { min-height: 44px; }
+
+.hero-branch {
+  min-inline-size: 0;
+  margin: 12px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.hero-branch legend { margin-bottom: 3px; padding: 0; font-size: .9375rem; font-weight: 700; }
+.hero-branch-options { display: flex; flex-wrap: wrap; gap: 6px; }
+.hero-branch label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 4px 10px;
+  border: 1px solid #508476;
+  border-radius: 10px;
+  background: #e0f3e8;
+  font-size: .9375rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.hero-branch input { width: 16px; height: 16px; margin: 0; accent-color: var(--ink); }
+.hero-branch label:has(:checked) { border-color: var(--ink); background: var(--paper); }
+.hero-branch label:has(:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.clinic-screen .details-section {
+  min-height: 0;
+  margin: 0;
+  padding: clamp(8px, 1.7dvh, 18px);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.clinic-screen .details-section[role="tabpanel"] .panel-heading {
+  position: static;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  white-space: normal;
+  margin: 0 0 8px;
+  font-size: clamp(1.25rem, 3.8dvh, 2rem);
+}
+
+.clinic-screen .clinic-pager:not([hidden]) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px;
+}
+
+.clinic-screen .clinic-pager .button { min-height: 44px; cursor: pointer; }
+.clinic-screen .clinic-pager .button:disabled { opacity: .55; cursor: default; }
+.clinic-screen .clinic-paged-grid { grid-template-columns: minmax(0, 1fr); }
+
+.clinic-screen .clinic-contact-book { margin-top: clamp(9px, 2dvh, 18px); }
+
+@media (max-width: 1239px), (max-height: 690px) {
+  .clinic-screen .clinic-contact-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .clinic-screen .clinic-social-link { display: inline; color: var(--ink); font-size: .875rem; text-decoration: underline; }
+  .clinic-screen .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .clinic-screen .contact-grid .contact-social { display: none; }
+  .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-row: auto; grid-template-rows: auto auto 1fr auto auto auto; }
+  .clinic-screen .contact-grid .contact-route-scene { min-height: 0; padding: 0; margin: 0; }
+  .clinic-screen .contact-grid .contact-route-anchor { margin: 0; }
+  .clinic-screen .contact-grid .contact-route { margin: 0; }
+  .clinic-screen .contact-grid .contact-cat { width: min(105px, 90%); justify-self: center; }
+  .clinic-screen .contact-grid .contact-route-anchor { width: 100%; }
+  .clinic-screen .contact-grid :is(.contact-rubbing-cat, .contact-route-cat) {
+    position: relative;
+    inset: auto;
+    grid-row: 1;
+    align-self: end;
+    justify-self: center;
+    margin-bottom: -4px;
+  }
+  .clinic-screen .contact-grid .contact-rubbing-cat { width: min(92px, 90%); }
+  .clinic-screen .contact-grid .contact-route-cat { width: 38px; }
+}
+
+@media (min-width: 761px) {
+  .clinic-screen .hero-artwork { --scene-x: 34%; inset: 0; width: 100%; height: 100%; transform: none; }
+}
+
+@media (max-width: 760px) {
+  .clinic-screen .hero-artwork {
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    aspect-ratio: auto;
+  }
+  .clinic-screen .hero .copy { padding-inline: 2px; }
+  .clinic-screen .hero .brand-title { display: none; }
+  .clinic-screen .hero .hero-tagline { font-size: clamp(1.5rem, 5.8vw, 2.25rem); }
+  .clinic-screen .hero-branch legend { margin-inline: auto; }
+  .clinic-screen .hero-branch-options { justify-content: center; }
+}
+
+@media (max-width: 1000px), (max-height: 690px) {
+  .clinic-screen .price-layout { grid-template-columns: 1fr; }
+  .clinic-screen .price-layout .comic-art { display: none; }
+  .clinic-screen .contact-card { padding-block: 12px; }
+  .clinic-screen .contact-social { min-height: 180px; }
+  .clinic-screen .review-grid figure { padding: 10px; }
+  .clinic-screen .review-grid blockquote { min-height: 0; }
+  .clinic-screen .appointment-service-link { margin-top: 10px; }
+}
+
+@media (max-height: 690px) {
+  .clinic-screen #contacts { padding-block: 5px; }
+  .clinic-screen .contact-grid .contact-card:not(.contact-social) { padding-block: 8px; gap: 6px; }
+  .clinic-screen .contact-grid p { margin: 2px 0; }
+  .clinic-screen .clinic-contact-book { margin-top: 8px; }
+}
+
+@media (max-height: 560px), (max-width: 360px) {
+  .clinic-screen .detailed > [role="note"] { padding-block: 3px !important; }
+  .clinic-screen .detailed .header { min-height: 32px; }
+  .clinic-screen .header :is(.phone, .mobile-phone) { min-height: 32px; }
+  .clinic-screen .clinic-tabs:not([hidden]) { margin-bottom: 5px; }
+  .clinic-screen .clinic-tabs button { min-height: 34px; }
+  .clinic-screen .hero .copy { padding-block: 2px; }
+  .clinic-screen .hero .hero-tagline { margin-top: 4px; }
+  .clinic-screen .hero .desc { margin-top: 4px; }
+  .clinic-screen .hero .actions { margin-top: 0; padding-bottom: 2px; }
+  .clinic-screen .hero .hero-button-icon { display: none; }
+  .clinic-screen .details-section { font-size: .9375rem; line-height: 1.25; }
+  .clinic-screen .details-section[role="tabpanel"] .panel-heading { margin: 0; font-size: 1.2rem; line-height: 1.15; }
+  .clinic-screen .section-head p { font-size: .875rem; line-height: 1.3; }
+  .clinic-screen .clinic-pager:not([hidden]) { margin-bottom: 4px; }
+  .clinic-screen .clinic-pager .button { min-height: 34px; }
+  .clinic-screen .contact-card:not(.contact-social) { gap: 5px 10px; padding: 8px; }
+  .clinic-screen .contact-card p { margin: 3px 0; }
+  .clinic-screen .contact-social { min-height: 0; }
+  .clinic-screen .contact-social .contact-character { width: 125px; }
+  .clinic-screen .price-group { padding: 6px 8px; }
+  .clinic-screen .price-group dl { margin-top: 3px; }
+  .clinic-screen .price-group dl div { padding-block: 4px; font-size: .9375rem; }
+  .clinic-screen .price-branch-contact { margin-top: 10px; padding-block: 8px; }
+  .clinic-screen .reviews-section .section-head { margin-bottom: 5px; }
+  .clinic-screen .review-grid figure { padding: 0; gap: 5px; }
+  .clinic-screen .review-grid blockquote { padding: 8px; }
+  .clinic-screen .review-grid figcaption img { width: 32px; height: 32px; }
+  .clinic-screen .detailed :is(.reviews-button, .appointment-service-link) { min-height: 36px; margin-top: 4px; }
+}
+
+@media (max-width: 760px) and (orientation: landscape) {
+  .clinic-screen .detailed .hero {
+    grid-template: 'art copy' minmax(0, 1fr) / minmax(0, .8fr) minmax(0, 1fr);
+  }
+  .clinic-screen .hero .copy { padding-block: 0; }
+  .clinic-screen .hero .hero-tagline { font-size: clamp(1.125rem, 3.6vw, 1.5rem); }
+  .clinic-screen .hero .desc { line-height: 1.3; }
+  .clinic-screen .hero-branch { margin-top: 6px; }
+  .clinic-screen .hero .actions { row-gap: 3px; padding-bottom: 0; }
+  .clinic-screen .hero-reviews { margin-top: 0; }
+}
+
+@media (max-width: 1000px) and (orientation: portrait) {
+  .clinic-screen .detailed .hero {
+    grid-template: 'copy' auto 'art' minmax(146px, 1fr) / minmax(0, 1fr);
+    gap: 0;
+  }
+  .clinic-screen .hero .copy { align-items: center; padding: clamp(8px, 1.8dvh, 18px) 8px 16px; text-align: center; }
+  .clinic-screen .hero .copy::before, .clinic-screen .hero .brand-title { display: none; }
+  .clinic-screen .hero .hero-tagline { text-align: center; }
+  .clinic-screen .hero-branch legend { margin-inline: auto; }
+  .clinic-screen .hero .actions { justify-content: center; margin-top: 12px; }
+  .clinic-screen .hero-artwork { --scene-x: 50%; position: relative; grid-area: art; z-index: auto; }
+  .clinic-screen .price-columns { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  .clinic-screen .detailed .hero { grid-template-rows: auto minmax(124px, 1fr); }
+  .clinic-screen .hero .copy { padding-bottom: 8px; }
+  .clinic-screen .hero .actions { gap: 6px; }
+  .clinic-screen .hero .button { padding-inline: 6px; font-size: .8125rem; }
+  .clinic-screen .contact-hours { font-size: .9375rem; }
+}
+
+@media (max-width: 760px), (max-width: 1000px) and (orientation: portrait) {
+  .clinic-screen .contact-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .clinic-screen .contact-grid :is(.contact-address, .contact-branch) { grid-template-rows: none; gap: 10px; padding: 14px; }
+  .clinic-screen .contact-grid p { margin: 0; font-size: .9375rem; }
+  .clinic-screen .contact-grid .contact-card-link { font-size: .9375rem; }
+}
+
+@media (max-height: 560px) and (min-width: 580px) {
+  .clinic-screen .detailed:has(> [role="note"]) {
+    grid-template: auto minmax(0, 1fr) / minmax(0, 1fr) auto;
+  }
+  .clinic-screen .detailed > [role="note"] { display: grid; align-content: center; }
+  .clinic-screen .detailed:has(> [role="note"]) .header { width: auto; padding-inline: 8px; }
+  .clinic-screen .detailed main { grid-column: 1 / -1; padding-bottom: 5px; }
+  .clinic-screen .details-section:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-auto-rows: max-content;
+    gap: 5px 12px;
+    padding-block: 5px;
+  }
+  .clinic-screen #contacts:not([hidden]) { display: block; }
+  .clinic-screen .details-section > :is(.contact-grid, .price-layout, .appointment-service-link, .appointment-note, .price-branch-contact, .review-grid) { grid-column: 1 / -1; }
+  .clinic-screen .details-section > :is(.appointment-service-link, .reviews-button) { justify-self: start; margin-top: 3px; }
+  .clinic-screen .details-section > .section-head { align-self: start; margin-bottom: 0; }
+  .clinic-screen .details-section > .clinic-pager { align-self: start; }
+  .clinic-screen .contact-grid .contact-card:not(.contact-social) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    align-items: end;
+    gap: 3px 8px;
+    padding-block: 5px;
+  }
+  .clinic-screen .contact-card:not(.contact-social) > :is(h3, p) { margin: 0; }
+  .clinic-screen .contact-card:not(.contact-social) > h3 { grid-column: 1 / -1; }
+  .clinic-screen .contact-card:not(.contact-social) > .contact-route-scene { grid-area: 2 / 2 / 4; }
+  .clinic-screen .contact-card:not(.contact-social) > :is(.contact-hours, .contact-card-link) { grid-column: 1; }
+  .clinic-screen .contact-card > .contact-photo { grid-column: 1 / -1; }
+  .clinic-screen .clinic-contact-book { min-height: 36px; margin-top: 3px; }
+  .clinic-screen .contact-social .contact-character { width: 100px; }
+}
+
