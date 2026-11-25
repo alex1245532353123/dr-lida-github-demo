@@ -543,7 +543,7 @@
   width: calc(100% + 16px);
   aspect-ratio: 2.48;
   /* The body rests on the button while the tail and paw hang over the edge. */
-  translate: -50% -80%;
+  translate: -50% -75%;
   z-index: 1;
   pointer-events: none;
 }
