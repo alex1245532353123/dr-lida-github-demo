@@ -2,10 +2,8 @@
   const ferret = document.querySelector('.contact-route-ferret');
   const route = ferret.previousElementSibling;
   const stage = ferret.querySelector('.contact-route-ferret-frames');
-  const motionButton = document.querySelector('.contact-ferret-motion');
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const canHover = matchMedia('(hover: hover)');
-  const compactRoute = matchMedia('(max-width: 760px), (pointer: coarse)');
   const atlas = new Image();
   atlas.alt = '';
   stage.append(atlas);
@@ -44,13 +42,12 @@
   breathing.push(frameAt(gestureFrameCount, 1));
 
   let visible = false;
-  let paused = false;
   let loading = false;
   let playback;
   let pawPress;
 
   function canPlay() {
-    return visible && !document.hidden && !paused && !reducedMotion.matches;
+    return visible && !document.hidden && !reducedMotion.matches;
   }
 
   function stop() {
@@ -92,7 +89,7 @@
 
       const movement = animate(gesture, duration, 'is-playing', rest);
       const pressed = {
-        translate: compactRoute.matches ? '0 4px' : '0 3px',
+        translate: '0 var(--ferret-press-depth, 3px)',
         boxShadow: '0 1px var(--ink), inset 0 1px rgb(255 255 255 / 65%)',
       };
       pawPress = route.animate([
@@ -117,16 +114,7 @@
     else stop();
   }
 
-  motionButton.hidden = reducedMotion.matches;
-  motionButton.addEventListener('click', () => {
-    paused = !paused;
-    motionButton.textContent = paused ? 'Включить анимацию' : 'Пауза анимации';
-    syncPlayback();
-  });
-  reducedMotion.addEventListener('change', () => {
-    motionButton.hidden = reducedMotion.matches;
-    syncPlayback();
-  });
+  reducedMotion.addEventListener('change', syncPlayback);
   document.addEventListener('visibilitychange', syncPlayback);
   route.addEventListener('pointerenter', (event) => {
     if (event.pointerType !== 'touch' && canHover.matches) play();

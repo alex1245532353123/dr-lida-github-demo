@@ -687,6 +687,7 @@
   padding-top: var(--corner-cat-clearance);
 }
 .contact-route-anchor {
+  --ferret-press-depth: 3px;
   display: grid;
   grid-template-columns: min(clamp(100px, 10.3vw, 144px), max(72px, calc(100% - 142px))) minmax(0, 1fr);
   grid-template-rows: 1fr auto 1fr;
@@ -707,6 +708,9 @@
   z-index: 1;
   pointer-events: none;
 }
+@media (max-width: 760px), (pointer: coarse) {
+  .contact-route-anchor { --ferret-press-depth: 4px; }
+}
 .contact-route-ferret > img { display: block; width: 100%; height: auto; }
 .contact-route-ferret-frames {
   display: none;
@@ -720,20 +724,6 @@
   height: 2400%;
   max-width: none;
 }
-.contact-ferret-motion {
-  justify-self: center;
-  min-height: 44px;
-  padding: 4px 8px;
-  border: 0;
-  background: transparent;
-  color: var(--ink);
-  font: inherit;
-  font-size: .875rem;
-  text-decoration: underline;
-  text-underline-offset: .18em;
-  cursor: pointer;
-}
-.contact-ferret-motion:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) {
   .contact-route-ferret:is(.is-playing, .is-resting) > img { visibility: hidden; }
   .contact-route-ferret:is(.is-playing, .is-resting) .contact-route-ferret-frames { display: block; }
